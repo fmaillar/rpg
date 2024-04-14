@@ -42,7 +42,7 @@ class Arena(storyAgent):
                         f"What are you doing {self.player.actions} ? : ".lower())
                     action_is_allowed = self.player.make_action(action, self.ennemy)
             # If the character succeed to escape
-            except Exception:
+            except ValueError:
                 break
             # Ennemie's turn, if not dead
             if self.ennemy.life > 0:

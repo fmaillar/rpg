@@ -7,12 +7,12 @@ from .storyAgent import storyAgent
 class Narrator(storyAgent):
     """Class to tell the story and interact with the player.
 
-    class attributs: allowed roles with their translation
-    attributs: none
-    methods: tell, choose_character, player_customization
+    Class attribute: allowed roles with their translation
+    Attribute: none
+    Methods: tell, choose_character, player_customization
     """
 
-    roles = {"guerrier": "warrior", "archer": "archer", "magicien": "wizzard"}
+    roles = {"warrior": "warrior", "archer": "archer", "magician": "wizard"}
 
     def __init__(self):
         """Init."""
@@ -33,23 +33,23 @@ class Narrator(storyAgent):
         """
         self.transition(7)
         print(
-            """Avant de commencer ton aventure, qui veux tu incarner ?
-- Un guerrier fort et solide comme la pierre
-- Un archer agile et souple comme le vent
-- Un magicien intelligent et rusé comme le corbeau"""
+            """Before starting your adventure, who do you want to play as?
+- A warrior strong and solid as stone
+- An archer who is agile and flexible like the wind
+- An intelligent and cunning magician like the crow"""
         )
         while True:
             try:
-                player_choice = input("Je veux incarner un : ").lower()
+                player_choice = input("I'd like to be : ").lower()
                 # Check if player_choice is in the roles class attribut
                 player_class = Narrator.roles[player_choice]
                 break
             except KeyError:
-                print("Je ne reconnais pas ce personnage")
+                print("I don't know this character.")
         return player_class
 
     def player_customization(self, player):
         """Allow the player to choose a character name."""
         self.transition(2)
-        name = input("Quel est votre nom aventurier ? : ")
+        name = input("What's your name adventurer ? : ")
         player.name = name

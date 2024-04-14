@@ -53,13 +53,13 @@ class Character:
             return False
         if action == "a":
             self.attacks(ennemy)
-        elif action == "f":
+        elif action == "e":
             if self.escape():
                 # If the escape is a success we raise an exception because the fight comes to an end
                 print("You escaped with agility.")
                 raise ValueError("Character Escaping")
             print("Enemy is on you !")
-        elif action == "s":
+        elif action == "h":
             self.heal()
         return True
 
