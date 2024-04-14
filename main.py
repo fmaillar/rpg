@@ -12,34 +12,29 @@ if __name__ == "__main__":
     arena = Arena()
 
     introduction = [
-        "Bienvenue aventurier aux portes d'un nouveau monde de magie et de légendes.",
-        "Ici commence ton histoire, laisse toi guider par le narrateur de ce monde.",
-        "Ta légende raisonnera pour des siècles et des siècles",
+        "Welcome adventurer to the gates of a new world of magic and legends.",
+        "Here begins your story, let yourself be guided by the narrator of this world.",
+        "Your legend will resonate for centuries and centuries",
     ]
-    # narrator.tell(introduction)
+    narrator.tell(introduction)
     # Allow the user to choose his type of character and retrieve it from the factory
     choice = narrator.choose_character()
     player = Factory.get_character(choice)
     narrator.player_customization(player)
-    # Retrieve an ennemy from factory, for this scenario an orc
-    ennemy = Factory.get_character("orc")
-    ennemy.name = "Gentro"
 
     # Exemple story to be told by the narrator
     story = [
-        "Votre voyage commence. Vous marchez au bord des imposantes montagne de la Moria",
-        "Le soleil est chaud sur votre visage et la neige fraîche à vos pieds",
-        "Vous entendez alors un bruissement sourd, vous vous retournez",
-        "Vous êtes alors nez à nez avec un orc qui vous attaque",
+        "Your journey begins. You walk along the edge of the towering mountains of Moria",
+        "The sun is warm on your face and the snow is fresh at your feet",
+        "You then hear a dull rustling, you turn around",
+        "You then come face to face with an orc who attacks you",
     ]
-    # narrator.tell(story)
 
-    # Start a fight
-    arena.fighters_enter(player, ennemy)
-    arena.battle()
     list_enemy_kind = ["orc", "wolf", "zombie"]
+    # Start fights
     for i, enemy_kind in enumerate(list_enemy_kind):
         ennemy = Factory.get_character(enemy_kind)
         ennemy.name = enemy_kind + str(i + 1)
+        narrator.tell(story)
         arena.fighters_enter(player, ennemy)
         arena.battle()
