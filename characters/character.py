@@ -72,7 +72,7 @@ class Warrior(Character):  # pylint: disable=too-few-public-methods
     """Class representing a warrior character."""
 
     def __init__(self, name=False):
-        """Init the warrior."""
+        """Initiate the warrior."""
         super().__init__(life=500, attack=50, defense=80, agility=10, name=name)
 
 
@@ -80,7 +80,7 @@ class Orc(Character):  # pylint: disable=too-few-public-methods
     """Class representing an orc character."""
 
     def __init__(self, name=False):
-        """Init the Orc."""
+        """Initiate the Orc."""
         super().__init__(life=400, attack=40, defense=70, agility=20, name=name)
 
 
@@ -88,19 +88,19 @@ class Archer(Character):  # pylint: disable=too-few-public-methods
     """Class representing an archer character."""
 
     def __init__(self, name=False):
-        """Init the Archer."""
+        """Initiate the Archer."""
         super().__init__(life=300, attack=50, defense=70, agility=20, name=name)
 
 
 class Wizard(Character):  # pylint: disable=too-few-public-methods
     """Class representing a wizard character.
 
-    Attributs: mana
-    methods = heal, str
+    Attributes: mana
+    Methods = heal, str
     """
 
     def __init__(self, name=False):
-        """Init the magician."""
+        """Initiate the magician."""
         super().__init__(life=600, attack=20, defense=50, agility=50, name=name)
         Character.actions.update({"h": "heal"})
         # Represents the magical power
