@@ -1,17 +1,21 @@
-#coding: utf-8
+"""Define the story agent."""
+# coding: utf-8
 
-import os
+# import os
 import time
 
-class storyAgent():
-    """ Mother class to all the objects that make the story living like the narrator or the arena
+
+class storyAgent:  # pylint: disable=too-few-public-methods
+    """Mother class to all the objects that make the story (narrator, arena).
+
     attributs : none
     methods : transition
     """
+
     def __init__(self):
-        pass
+        """Init th class."""
 
     def transition(self, waiting_time):
-        """Function to make a break and clear the screen"""
+        """Make a break and clear the screen."""
         time.sleep(waiting_time)
-        os.system('cls||clear')
+        # os.system("cls||clear")
