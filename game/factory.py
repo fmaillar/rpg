@@ -7,10 +7,12 @@ class Factory:
     character_classes = {
         "warrior": "Warrior",
         "archer": "Archer",
+        "dwarf": "Dwarf",
         "wizard": "Wizard",
         "orc": "Orc",
         "wolf": "Wolf",
-        "zombie": "Zombie"
+        "zombie": "Zombie",
+        "bear": "Bear"
     }
 
     @classmethod

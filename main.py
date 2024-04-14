@@ -1,6 +1,7 @@
 # coding: utf-8
 """Main of thr rpg."""
 
+import random
 from game.narrator import Narrator
 from game.factory import Factory
 from game.arena import Arena
@@ -30,11 +31,12 @@ if __name__ == "__main__":
         "You then come face to face with an orc who attacks you",
     ]
 
-    list_enemy_kind = ["orc", "wolf", "zombie"]
+    list_enemy_kind = ["bear", "orc", "wolf", "zombie"]
+    list_enemy = random.sample(list_enemy_kind, 3)
     # Start fights
-    for i, enemy_kind in enumerate(list_enemy_kind):
-        ennemy = Factory.get_character(enemy_kind)
-        ennemy.name = enemy_kind + str(i + 1)
-        narrator.tell(story)
+    for i, enem in enumerate(list_enemy):
+        ennemy = Factory.get_character(enem)
+        ennemy.name = enem + str(i + 1)
+        # narrator.tell(story)
         arena.fighters_enter(player, ennemy)
         arena.battle()

@@ -32,7 +32,7 @@ class Character:
             print(f"{target.name} dodged the attack. ")
             return False
         # Subtract to target's life the character's attack minus the target defens divided by 5
-        target.life -= self.attack - (target.defense / 5)
+        target.life -= max(self.attack - (target.defense / 5), 0)
         # Make sure characters can not have negative life
         target.life = max(target.life, 0)
         print(f"{target.name} has now {target.life} health points.")
@@ -76,20 +76,20 @@ class Warrior(Character):  # pylint: disable=too-few-public-methods
         super().__init__(life=500, attack=50, defense=80, agility=10, name=name)
 
 
-class Orc(Character):  # pylint: disable=too-few-public-methods
-    """Class representing an orc character."""
-
-    def __init__(self, name=False):
-        """Initiate the Orc."""
-        super().__init__(life=400, attack=40, defense=70, agility=20, name=name)
-
-
 class Archer(Character):  # pylint: disable=too-few-public-methods
     """Class representing an archer character."""
 
     def __init__(self, name=False):
         """Initiate the Archer."""
         super().__init__(life=300, attack=50, defense=70, agility=20, name=name)
+
+
+class Dwarf(Character):  # pylint: disable=too-few-public-methods
+    """Class representing a dwarf character."""
+
+    def __init__(self, name=False):
+        """Initiate the Dwarf."""
+        super().__init__(life=800, attack=70, defense=100, agility=5, name=name)
 
 
 class Wizard(Character):  # pylint: disable=too-few-public-methods
@@ -128,17 +128,33 @@ class Wizard(Character):  # pylint: disable=too-few-public-methods
         return f"{self.name} : life = {self.life}, mana = {self.mana}"
 
 
-class Zombie(Character):
+class Bear(Character):  # pylint: disable=too-few-public-methods
+    """Class representing an bear character."""
+
+    def __init__(self, name=False):
+        """Initiate the Bear."""
+        super().__init__(life=500, attack=50, defense=60, agility=15, name=name)
+
+
+class Orc(Character):  # pylint: disable=too-few-public-methods
+    """Class representing an orc character."""
+
+    def __init__(self, name=False):
+        """Initiate the Orc."""
+        super().__init__(life=400, attack=40, defense=70, agility=20, name=name)
+
+
+class Zombie(Character):  # pylint: disable=too-few-public-methods
     """Define the zombie."""
 
     def __init__(self, name=False):
         """Initiate the class."""
-        super().__init__(life=600, attack=15, defense=15, agility=5, name=name)
+        super().__init__(life=600, attack=20, defense=40, agility=15, name=name)
 
 
-class Wolf(Character):
+class Wolf(Character):  # pylint: disable=too-few-public-methods
     """Define the wolf."""
 
     def __init__(self, name=False):
         """Initiate the class."""
-        super().__init__(life=300, attack=30, defense=15, agility=40, name=name)
+        super().__init__(life=400, attack=30, defense=30, agility=40, name=name)

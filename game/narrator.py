@@ -12,7 +12,8 @@ class Narrator(storyAgent):
     Methods: tell, choose_character, player_customization
     """
 
-    roles = {"warrior": "warrior", "archer": "archer", "magician": "wizard"}
+    roles = {"warrior": "warrior", "archer": "archer", "magician": "wizard",
+             "dwarf": "dwarf"}
 
     def __init__(self):
         """Init."""
@@ -36,7 +37,8 @@ class Narrator(storyAgent):
             """Before starting your adventure, who do you want to play as?
 - A warrior strong and solid as stone
 - An archer who is agile and flexible like the wind
-- An intelligent and cunning magician like the crow"""
+- An intelligent and cunning magician like the crow
+- A dwarf who is very powerful"""
         )
         while True:
             try:
